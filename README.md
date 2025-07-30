@@ -29,11 +29,6 @@ I wanted a space to:
 
 - Svelte syntax and file structure (`.svelte`)
 - Reactive variables and declarations
-- Bindings and events
-- Conditional and loop rendering
-- Component props and slots
-- Stores (`writable`, `readable`, `derived`)
-- Basic transitions and animations
 
 > This list will grow as I continue learning!
 
