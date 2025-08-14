@@ -6,6 +6,7 @@
 <header>
 	<section>
 		<img src={logo} alt="Logo" />
+
 		{#if userData.loadingUser}
 			<h5>loading user...</h5>
 		{:else if userData.id !== 0}
@@ -18,6 +19,7 @@
 	</section>
 </header>
 
+<!-- STYlING -->
 <style>
 	header {
 		padding: 16px 0;

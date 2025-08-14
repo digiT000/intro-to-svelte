@@ -3,25 +3,10 @@
 	import { getPosts } from '../utils/getPosts';
 	import { userData } from '$lib/state/user.svelte';
 	import ListPost from '$lib/components/ListPosts.svelte';
+	import HeaderProfile from '$lib/components/HeaderProfile.svelte';
 	// Dummy Storage for Posts
 	const posts: { id: number; title: string; body: string }[] = $state([]);
 	let isLoading: boolean = $state(true);
-
-	const user = $state({
-		name: 'Farel',
-		followers: 10,
-		isFollowByYou: false
-	});
-
-	function handleAddNewFollower() {
-		user.followers += 1;
-		user.isFollowByYou = true;
-	}
-
-	function handleRemoveFollower() {
-		user.followers -= 1;
-		user.isFollowByYou = false;
-	}
 
 	const newPostData = $state({
 		title: '',
@@ -58,16 +43,9 @@
 </script>
 
 <section>
-	<h1>Welcome {user.name}</h1>
-	<button onclick={user.isFollowByYou ? handleRemoveFollower : handleAddNewFollower}
-		>{user.isFollowByYou ? 'Unfollow' : 'Follow'}</button
-	>
+	<HeaderProfile />
 
-	<p>Followers: {user.followers}</p>
-</section>
-<section>
 	<h2>Create New Post</h2>
-
 	{#if userData.loadingUser}
 		<p>Checking user...</p>
 	{:else if userData.id !== 0}
